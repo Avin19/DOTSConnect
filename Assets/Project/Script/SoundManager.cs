@@ -1,18 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static SoundManager Instance;
+
+
+    private void Awake()
     {
-        
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+            return;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    [SerializeField] private AudioSource _effectSound;
+
+    public void PlaySound(AudioClip clip)
+    {
+        _effectSound.PlayOneShot(clip);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
