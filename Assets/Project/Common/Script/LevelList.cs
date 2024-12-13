@@ -1,9 +1,12 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Connect.Comman
 {
-    public class LevelList : MonoBehaviour
+    [CreateAssetMenu(fileName = "Level", menuName = "SO/All Levels")]
+    public class LevelList : ScriptableObject
     {
+        public List<LevelData> Levels;
 
     }
 }
