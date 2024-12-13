@@ -1,18 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelList : MonoBehaviour
+namespace Connect.Comman
 {
-    // Start is called before the first frame update
-    void Start()
+    public class LevelList : MonoBehaviour
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -33,7 +33,7 @@ namespace Connect.Comman
             {
                 if (points != null && points.Count > 0)
                 {
-                    return points[0];
+                    return points[points.Count - 1];
                 }
                 return new Vector2Int(-1, -1);
             }
