@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Connect.Comman;
 using UnityEngine;
 
 
@@ -5,6 +7,8 @@ namespace Connect.Core
 {
     public class GameManager : MonoBehaviour
     {
+        #region  START_METHODS
+
         public static GameManager Instance;
 
         private void Awake()
@@ -25,6 +29,21 @@ namespace Connect.Core
         {
 
         }
+
+        #endregion
+
+        #region  LEVEL_DATA
+        [SerializeField] private LevelData defaultLevel;
+        [SerializeField] private LevelList allLevel;
+
+        private Dictionary<string, LevelData> Levels;
+
+        public LevelData GetLevel()
+        {
+            return defaultLevel; ;
+        }
+
+        #endregion
 
         #region  SCENE_LOAD
 
