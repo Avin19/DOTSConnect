@@ -32,6 +32,38 @@ namespace Connect.Core
 
         #endregion
 
+        #region GAME_VARIABLES
+
+        [HideInInspector]
+        public int currentStage;
+        [HideInInspector]
+        public int currentLevel;
+        [HideInInspector]
+        public string stageName;
+
+        public bool IsLevelUnlocked(int level)
+        {
+            string levelName = "Level" + currentStage.ToString() + level.ToString();
+
+            if (level == 1)
+            {
+                PlayerPrefs.SetInt(levelName, 1);
+                return true;
+            }
+            if (PlayerPrefs.HasKey(levelName))
+            {
+                return PlayerPrefs.GetInt(levelName) == 1;
+            }
+            PlayerPrefs.SetInt(levelName, 0);
+            return false;
+        }
+
+        public void UnloackLevel()
+        {
+            string levelName = "Level" + currentStage.ToString() + currentLevel.ToString();
+        }
+
+        #endregion
         #region  LEVEL_DATA
         [SerializeField] private LevelData defaultLevel;
         [SerializeField] private LevelList allLevel;
