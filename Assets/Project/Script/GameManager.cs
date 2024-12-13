@@ -27,12 +27,21 @@ namespace Connect.Core
         }
         private void Init()
         {
+            currentStage = 1;
+            currentLevel = 1;
 
+            Levels = new Dictionary<string, LevelData>();
+
+            foreach (var level in allLevel.Levels)
+            {
+                Levels[level.levelName] = level;
+            }
         }
 
         #endregion
 
         #region GAME_VARIABLES
+
 
         [HideInInspector]
         public int currentStage;
@@ -58,12 +67,27 @@ namespace Connect.Core
             return false;
         }
 
-        public void UnloackLevel()
+        public void UnlockLevel()
         {
+            currentLevel++;
+
+            if (currentLevel == 51)
+            {
+                currentLevel = 1;
+                currentStage++;
+
+                if (currentStage == 8)
+                {
+                    currentStage = 1;
+                    GoToMainMenu();
+                }
+            }
             string levelName = "Level" + currentStage.ToString() + currentLevel.ToString();
+            PlayerPrefs.SetInt(levelName, 1);
         }
 
         #endregion
+
         #region  LEVEL_DATA
         [SerializeField] private LevelData defaultLevel;
         [SerializeField] private LevelList allLevel;
@@ -72,6 +96,13 @@ namespace Connect.Core
 
         public LevelData GetLevel()
         {
+            string levelName = "Level" + currentStage.ToString() + currentLevel.ToString();
+
+            if (Levels.ContainsKey(levelName))
+            {
+                return Levels[levelName];
+            }
+
             return defaultLevel; ;
         }
 
