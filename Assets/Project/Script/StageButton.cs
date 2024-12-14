@@ -1,25 +1,26 @@
-
-using Connect.Core;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StageButton : MonoBehaviour
+namespace Connect.Core
 {
-    [SerializeField] private string stageName;
-    [SerializeField] private Color stageColor;
-    [SerializeField] private int stageNumber;
-    [SerializeField] private Button button;
-
-
-    private void Awake()
+    public class StageButton : MonoBehaviour
     {
-        button.onClick.AddListener(OnButtonClick);
-    }
+        [SerializeField] private string stageName;
+        [SerializeField] private Color stageColor;
+        [SerializeField] private int stageNumber;
+        [SerializeField] private Button button;
 
-    private void OnButtonClick()
-    {
-        GameManager.Instance.currentStage = stageNumber;
-        GameManager.Instance.stageName = stageName;
-        MainMenuManager.Instance.CLickedStage(stageName, stageColor);
+
+        private void Awake()
+        {
+            button.onClick.AddListener(OnButtonClick);
+        }
+
+        private void OnButtonClick()
+        {
+            GameManager.Instance.currentStage = stageNumber;
+            GameManager.Instance.stageName = stageName;
+            MainMenuManager.Instance.CLickedStage(stageName, stageColor);
+        }
     }
 }
