@@ -1,18 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
+
+using Connect.Core;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StageButton : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private string stageName;
+    [SerializeField] private Color stageColor;
+    [SerializeField] private int stageNumber;
+    [SerializeField] private Button button;
+
+
+    private void Awake()
     {
-        
+        button.onClick.AddListener(OnButtonClick);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnButtonClick()
     {
-        
+        GameManager.Instance.currentStage = stageNumber;
+        GameManager.Instance.stageName = stageName;
+        MainMenuManager.Instance.CLickedStage(stageName, stageColor);
     }
 }
