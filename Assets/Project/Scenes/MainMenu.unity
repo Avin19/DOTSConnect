@@ -205,7 +205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 129202493}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1403659470}
+        m_TargetAssemblyTypeName: MainMenuManager, Connect.Core
+        m_MethodName: ClickedPlay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &129202493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1243,6 +1255,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d958b9a3a2ed4c45a7c64475a6d2549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  titlePanel: {fileID: 757659686}
+  stagePanel: {fileID: 1424593874}
+  levelPanel: {fileID: 2111643799}
+  currentColor: {r: 0, g: 0, b: 0, a: 0}
+  levelTitleText: {fileID: 595068351}
+  levelTitleImage: {fileID: 360828790}
 --- !u!1 &1424593874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1802,7 +1820,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1947811413}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1403659470}
+        m_TargetAssemblyTypeName: MainMenuManager, Connect.Core
+        m_MethodName: ClickedBackToTitle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2038685264
 GameObject:
   m_ObjectHideFlags: 0
@@ -1955,7 +1985,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2083596723}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1403659470}
+        m_TargetAssemblyTypeName: MainMenuManager, Connect.Core
+        m_MethodName: ClickedBackToTitle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2083596723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2009,7 +2051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2111643800
 RectTransform:
   m_ObjectHideFlags: 0
