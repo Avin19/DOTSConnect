@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace Connect.Comman
@@ -24,6 +22,7 @@ namespace Connect.Comman
                 {
                     return points[0];
                 }
+
                 return new Vector2Int(-1, -1);
             }
         }

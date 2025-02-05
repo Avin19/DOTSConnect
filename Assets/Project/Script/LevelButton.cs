@@ -32,11 +32,23 @@ namespace Connect.Core
 
         private void OnEnable()
         {
-
+            MainMenuManager.Instance.LevelOpened += LevelOpened;
         }
+
+
         private void OnDisable()
         {
+            MainMenuManager.Instance.LevelOpened -= LevelOpened;
+        }
+        private void LevelOpened()
+        {
+            string gameObjectName = gameObject.name;
+            string[] parts = gameObjectName.Split('_');
+            levelText.text = parts[parts.Length - 1];
+            currentLevel = int.Parse(levelText.text);
+            isLevelUnlocked = GameManager.Instance.IsLevelUnlocked(currentLevel);
 
+            image.color = isLevelUnlocked ? MainMenuManager.Instance.currentColor : inactiveColor;
         }
     }
 }
